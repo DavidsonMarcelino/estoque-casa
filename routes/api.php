@@ -18,8 +18,8 @@ Route::group([
     Route::post('login', 'AuthController@auth');
 
     Route::group([
-        'middleware' => ['api', 'jwt.auth'],
-        // 'middleware' => ['api']
+        // 'middleware' => ['api', 'jwt.auth'],
+        'middleware' => ['api']
     ], function ($router) {
 
         /*
@@ -51,13 +51,14 @@ Route::group([
         Route::post('user/recovery', 'UserRecoveryController@recovery')->name('user.password.recoveryUser')->middleware(['web']);
         Route::get('user/recovery/{token}', 'UserRecoveryController@recoveryForm')->name('user.password.recoveryUser.form')->middleware(['web']);
         Route::post('user/recovery/{token}', 'UserRecoveryController@change')->middleware(['web']);
-  
+
         /*
         |--------------------------------------------------------------------------
-        | Paciente Routes
+        | Estoque Routes
         |--------------------------------------------------------------------------
         */
-        Route::resource('pacientes', 'PacienteController');
-
+        Route::resource('estoques', 'EstoqueController');
+        Route::post('adiciona/{id}', 'EstoqueController@adiciona');
+        Route::post('retira/{id}', 'EstoqueController@retira');
     });
 });

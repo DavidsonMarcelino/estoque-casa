@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/user/image/{id}/{hash?}', 'Api\UserController@image');
+
+Route::get('estoques', function ()
+{
+    return view('estoque');
+});
