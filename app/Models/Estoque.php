@@ -11,6 +11,9 @@ class Estoque extends Model
     ];
 
     protected $fillable = [
-        'title', 'description'
+        'nome',
+        'quantidade',
+        'quantidade_minima',
+        'icone'
     ];
 }

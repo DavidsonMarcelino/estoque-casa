@@ -30,9 +30,9 @@
                     for(i = 0 ; i < response.data.length ; i++)
                     {
                 
-                        html += '<div class="col-3 ml-2 px-1" style="border: 1px solid black; height:45vh; border-radius: 8px;">\
+                        html += '<div class="col-3 ml-2 px-1" style="height:45vh;">\
                             <div class="row justify-content-center">\
-                                <div class="col-8 mt-1 text-center">\
+                                <div class="col-8 mt-1 py-2 text-center" style="border: 1px solid black; border-radius: 8px;">\
                                     <img src="' + response.data[i].icone + '" style="max-width: 100%;">\
                                     <br><b>' + response.data[i].nome + '</b><br><br>\
                                     <button class="btn btn-danger float-start" onclick="retira(' + response.data[i].id + ')">-</button>\

@@ -14,8 +14,9 @@ class EstoqueRequest extends BaseRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'description' => 'required'
+            'nome' => 'required',
+            'quantidade' => 'required',
+            'quantidade_minima' => 'required',
         ];
     }
 
@@ -39,8 +40,9 @@ class EstoqueRequest extends BaseRequest
     public function attributes()
     {
         return [
-            'title' => 'Título',
-            'description' => 'Descrição'
+            'nome' => 'Nome',
+            'quantidade' => 'Quantidade',
+            'quantidade_minima' => 'Quantidade mínima',
         ];
     }
 }
