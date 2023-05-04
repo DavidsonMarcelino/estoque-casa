@@ -60,5 +60,6 @@ Route::group([
         Route::resource('estoques', 'EstoqueController');
         Route::post('adiciona/{id}', 'EstoqueController@adiciona');
         Route::post('retira/{id}', 'EstoqueController@retira');
+        Route::get('lista', 'EstoqueController@lista');
     });
 });

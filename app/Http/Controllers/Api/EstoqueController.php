@@ -30,4 +30,22 @@ class EstoqueController extends BaseController
     {
         return Estoque::where('id', $id)->increment('quantidade', -1);
     }
+
+    public function lista()
+    {
+        $estoque = Estoque::orderBy('nome', 'ASC')->get();
+
+        $i = 0;
+        foreach($estoque as $e)
+        {
+            if($e->quantidade < $e->quantidade_minima)
+            {
+                $lista[$i]['nome'] = $e->nome;
+                $lista[$i]['quantidade'] = $e->quantidade_minima - $e->quantidade;
+                $i++;
+            }
+        }
+
+        return $lista;
+    }
 }
